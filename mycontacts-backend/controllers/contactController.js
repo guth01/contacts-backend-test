@@ -10,7 +10,7 @@ const getContacts=asyncHandler(async(req,res)=>{
 });
 //@desc Create New contacts
 //@route POST /api/contacts
-//@access public
+//@access private
 const createContact=asyncHandler(async(req,res)=>{
     console.log("the req body is",req.body);
     const {name,email,phone}=req.body;
@@ -28,7 +28,7 @@ const createContact=asyncHandler(async(req,res)=>{
 });
 //@desc get contact
 //@route GET /api/contacts
-//@access public
+//@access private
 const getContact=asyncHandler(async(req,res)=>{
     const contact=await Contact.findById(req.params.id);
     if(!contact){
@@ -40,7 +40,7 @@ const getContact=asyncHandler(async(req,res)=>{
 
 //@desc Update contact
 //@route PUT /api/contacts
-//@access public
+//@access private
 const updateContact=asyncHandler(async(req,res)=>{
     const contact=await Contact.findById(req.params.id);
     if(!contact){
@@ -63,7 +63,7 @@ const updateContact=asyncHandler(async(req,res)=>{
 
 //@desc Delete contact
 //@route DELETE /api/contacts
-//@access public
+//@access private
 const deleteContact=asyncHandler(async(req,res)=>{
     const contact=await Contact.findById(req.params.id);
     if(!contact){
