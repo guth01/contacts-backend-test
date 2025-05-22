@@ -52,7 +52,7 @@ const LoginPage = () => {
       console.log('Login successful, received token');
       
       // Store token in local storage (matches the backend response)
-      localStorage.setItem('authToken', data.accessToken);
+      localStorage.setItem('token', data.accessToken);
       
       // We need to get the user's data to display their username
       try {

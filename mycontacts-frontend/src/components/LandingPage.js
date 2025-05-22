@@ -11,7 +11,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     // Check authentication status
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     if (token) {
       setIsLoggedIn(true);
     }

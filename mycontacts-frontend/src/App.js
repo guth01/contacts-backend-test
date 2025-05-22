@@ -9,6 +9,8 @@ import LandingPage from './components/LandingPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import Dash from './components/dashboard';
+import AddContact from './components/addContacts';
+import ViewContacts from './components/viewContacts';
 
 // Create a protected route component to use for authenticated routes
 const ProtectedRoute = ({ children }) => {
@@ -31,17 +33,30 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           
-          {/* Protected Routes - Will be implemented later */}
+          {/* Protected Routes */}
           <Route 
             path="/dashboard" 
             element={
               <ProtectedRoute>
-                {/* We'll implement Dashboard component later */}
                 <Dash/>
-                <div className="p-8">
-                  <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-                  <p>Welcome to your contacts dashboard! This page is under construction.</p>
-                </div>
+              </ProtectedRoute>
+            } 
+          />
+          
+          <Route 
+            path="/add-contact" 
+            element={
+              <ProtectedRoute>
+                <AddContact/>
+              </ProtectedRoute>
+            } 
+          />
+          
+          <Route 
+            path="/contacts" 
+            element={
+              <ProtectedRoute>
+                <ViewContacts/>
               </ProtectedRoute>
             } 
           />

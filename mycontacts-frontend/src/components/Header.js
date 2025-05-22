@@ -17,7 +17,7 @@ const Header = () => {
 
   const checkLoginStatus = () => {
     // Check if user is logged in by looking for token in localStorage
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     const storedUsername = localStorage.getItem('username');
     
     if (token) {
@@ -59,7 +59,7 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
     localStorage.removeItem('username');
     setIsLoggedIn(false);
     setUsername('');
